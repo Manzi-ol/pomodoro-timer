@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <header>
+      <div class="brand">POMODORO</div>
+      <div class="session-count">
+        Session <span id="sessionNum">1</span>
+        <span class="dots" id="dots"></span>
+      </div>
+    </header>
+
+    <div class="mode-tabs">
+      <button class="tab active" data-mode="work">Focus</button>
+      <button class="tab" data-mode="short">Short Break</button>
+      <button class="tab" data-mode="long">Long Break</button>
+    </div>
+
+    <div class="timer-ring-wrap">
+      <svg class="ring" viewBox="0 0 200 200">
+        <circle class="ring-bg" cx="100" cy="100" r="88" />
+        <circle class="ring-progress" id="ring" cx="100" cy="100" r="88" />
+      </svg>
+      <div class="timer-inner">
+        <div class="time" id="time">25:00</div>
+        <div class="mode-label" id="modeLabel">Focus Time</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn-icon" id="resetBtn" title="Reset">↺</button>
+      <button class="btn-main" id="startBtn">Start</button>
+      <button class="btn-icon" id="skipBtn" title="Skip">⏭</button>
+    </div>
+
+    <div class="settings">
+      <div class="setting-row">
+        <label>Focus</label>
+        <div class="stepper">
+          <button class="step-btn" data-key="work" data-dir="-1">−</button>
+          <span id="work-val">25</span>
+          <button class="step-btn" data-key="work" data-dir="1">+</button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <label>Short Break</label>
+        <div class="stepper">
+          <button class="step-btn" data-key="short" data-dir="-1">−</button>
+          <span id="short-val">5</span>
+          <button class="step-btn" data-key="short" data-dir="1">+</button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <label>Long Break</label>
+        <div class="stepper">
+          <button class="step-btn" data-key="long" data-dir="-1">−</button>
+          <span id="long-val">15</span>
+          <button class="step-btn" data-key="long" data-dir="1">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="log" id="log"></div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
